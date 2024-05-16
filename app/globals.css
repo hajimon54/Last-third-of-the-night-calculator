@@ -2,32 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* base styles */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #ebf0fa;
+  @apply text-gray-500;
+}
+h1,
+h2 {
+  @apply font-bold  text-lg;
+}
+main {
+  @apply max-w-5xl my-12 mx-auto px-8;
+}
+main > h2 {
+  @apply mb-4 pb-2 text-base;
+}
+p > a {
+  @apply underline;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* card styles */
+.card {
+  @apply bg-white 
+      shadow-sm 
+      rounded-md 
+      py-3 px-4 my-4 
+      relative 
+      overflow-hidden;
+}
+.card h3 {
+  @apply flex justify-center font-bold text-gray-700 text-sm 
+      mb-0;
+}
+.card p {
+  @apply flex justify-center my-12 text-sm leading-10;
+}
+
+/* pill styles */
+.pill {
+  @apply py-1 px-2 mt-3
+      inline-block 
+      text-xs font-semibold;
+}
+.pill.high {
+  @apply bg-red-300 text-red-600;
+}
+.pill.medium {
+  @apply bg-blue-300 text-blue-600;
+}
+.pill.low {
+  @apply bg-emerald-300 text-emerald-600;
+}
+.card .pill {
+  @apply absolute bottom-0 right-0 
+      rounded-tl-md;
+}
+
+.hidden {
+  display: none;
 }
