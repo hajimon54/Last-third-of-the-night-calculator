@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Clock from "/app/components/clock.js";
+import DataFetcher from "/Users/idris/react-weather-app/app/components/DataFetcher.js";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
 
       <div className="card">
         <h3>Last third of the night starts at: </h3>
-        <Clock />
+        <DataFetcher />
       </div>
     </main>
   );
