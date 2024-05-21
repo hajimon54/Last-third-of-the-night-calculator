@@ -78,7 +78,7 @@ const PrayerTimesFetcher = () => {
     const maghribMinutes = timeToMinutes(maghrib);
 
     const sumMinutes = Math.abs(fajrMinutes - maghribMinutes / 3);
-    const resultMinutes = Math.floor(sumMinutes);
+    const resultMinutes = sumMinutes - fajrMinutes;
 
     return minutesToTime(resultMinutes);
   };
@@ -87,9 +87,9 @@ const PrayerTimesFetcher = () => {
 
   return (
     <div>
-      <p>Fajr time for tomorrow: {fajrTime}</p>
       <p>Maghrib time for the current today: {maghribTime}</p>
-      {resultTime && <p>Resulting time: {resultTime}</p>}
+      <p>Fajr time for tomorrow: {fajrTime}</p>
+      {resultTime && <p>Last third of the night starts at: {resultTime}</p>}
     </div>
   );
 };

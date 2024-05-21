@@ -14,7 +14,7 @@ export default function Home() {
       </header>
 
       <div className="card">
-        <h3>Last third of the night starts at: </h3>
+        <h3>Last third of the night calculator</h3>
         <DataFetcher />
       </div>
     </main>
